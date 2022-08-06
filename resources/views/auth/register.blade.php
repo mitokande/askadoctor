@@ -26,11 +26,12 @@
 					<h1>Please register to Findoctor!</h1>
 					<div class="row justify-content-center">
 						<div class="col-md-5">
-							<form>
+							<form method="POST" action="{{ route('register') }}">
+								@csrf
 								<div class="box_form">
 									<div class="form-group">
 										<label>Name</label>
-										<input type="text" class="form-control" placeholder="Your name">
+										<input type="text" name="name" class="form-control" placeholder="Your name">
 									</div>
 									<div class="form-group">
 										<label>Last name</label>
@@ -38,15 +39,15 @@
 									</div>
 									<div class="form-group">
 										<label>Email</label>
-										<input type="email" class="form-control" placeholder="Your email address">
+										<input type="email" name="email" class="form-control" placeholder="Your email address">
 									</div>
 									<div class="form-group">
 										<label>Password</label>
-										<input type="password" class="form-control" id="password1" name="password1" placeholder="Your password">
+										<input type="password" name="password" class="form-control" id="password1" name="password1" placeholder="Your password">
 									</div>
 									<div class="form-group">
 										<label>Confirm password</label>
-										<input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm password">
+										<input type="password" class="form-control" id="password2" name="password_confirmation" placeholder="Confirm password">
 									</div>
 									<div id="pass-info" class="clearfix"></div>
 									<div class="checkbox-holder text-left">

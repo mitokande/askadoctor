@@ -182,7 +182,10 @@
           </form>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+          <form method="POST" action="{{ route('logout') }}">
+            @csrf
+          <a onclick="event.preventDefault();
+          this.closest('form').submit();" class="nav-link" data-toggle="modal" data-target="#exampleModal">
             <i class="fa fa-fw fa-sign-out"></i>Logout</a>
         </li>
       </ul>

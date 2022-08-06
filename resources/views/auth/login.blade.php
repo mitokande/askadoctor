@@ -24,7 +24,8 @@
 			<div class="container margin_60_35">
 				<div id="login-2">
 					<h1>Please login to Findoctor!</h1>
-					<form>
+					<form  method="POST" action="{{ __('login') }}">
+						@csrf
 						<div class="box_form clearfix">
 							<div class="box_login">
 								<a href="#0" class="social_bt facebook">Login with Facebook</a>
@@ -33,7 +34,7 @@
 							</div>
 							<div class="box_login last">
 								<div class="form-group">
-									<input type="email" class="form-control" placeholder="Your email address">
+									<input type="email" class="form-control" name="email" placeholder="Your email address">
 								</div>
 								<div class="form-group">
 									<input type="password" class="form-control" placeholder="Your password" name="password" id="password">
