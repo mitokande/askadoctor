@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DoctorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,9 +24,7 @@ Route::get('/faq', function () {
 Route::get('/doctors', function () {
     return view('list');
 });
-Route::get('/doctor', function () {
-    return view('single-doctor');
-});
+Route::get('/{doctor}', [DoctorController::class,'showSingle']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
