@@ -19,7 +19,7 @@
                         <p>
                             Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.
                         </p>
-                        <form method="post" action="list.html">
+                        <form method="get" action="/doctors">
                             <div id="custom-search-input">
                                 <div class="input-group">
                                     <input type="text" class=" search-query" placeholder="Ex. Name, Specialization ....">

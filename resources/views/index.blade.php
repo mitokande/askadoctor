@@ -1,6 +1,7 @@
 <?php
 
     require_once("imports/base-css.php");
+    require_once("imports/base-js.php");
     require_once("components/Header.php");
     require_once("components/Footer.php");
     require_once("components/Main2.php");
@@ -41,10 +42,7 @@
 
     <?php Footer(); ?>
 
-	<!-- COMMON SCRIPTS -->
-	<script src="js/jquery-3.6.0.min.js"></script>
-	<script src="js/common_scripts.min.js"></script>
-	<script src="js/functions.js"></script>
+    <?php BaseJs(); ?>
     
     <!-- SPECIFIC SCRIPTS -->
 	<script>

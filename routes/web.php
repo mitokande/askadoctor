@@ -17,7 +17,15 @@ Route::get('/', function () {
     return view('index');
 });
 
-
+Route::get('/faq', function () {
+    return view('faq');
+});
+Route::get('/doctors', function () {
+    return view('list');
+});
+Route::get('/doctor', function () {
+    return view('single-doctor');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

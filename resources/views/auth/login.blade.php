@@ -1,6 +1,7 @@
 <?php
 
     require_once("imports/base-css.php");
+	require_once("imports/base-js.php");
     require_once("components/Header.php");
     require_once("components/Footer.php");
 
@@ -54,6 +55,8 @@
 	</main>
 
     <?php Footer(); ?>
+
+	<?php BaseJs(); ?>
     
 </body>
 </html>
