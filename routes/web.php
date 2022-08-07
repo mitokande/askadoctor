@@ -21,9 +21,7 @@ Route::get('/', function () {
 Route::get('/faq', function () {
     return view('faq');
 });
-Route::get('/doctors', function () {
-    return view('list');
-});
+Route::get('/doctors', [DoctorController::class, 'list']);
 Route::get('/{doctor}', [DoctorController::class,'showSingle']);
 
 Route::get('/dashboard', function () {

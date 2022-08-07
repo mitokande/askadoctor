@@ -11,4 +11,8 @@ class DoctorController extends Controller
     public function showSingle($doctor){
         return view('single-doctor',['doctor'=> Doctor::where('username',$doctor)->first()]);
     }
+
+    public function list(){
+        return view('list',['doctors'=>Doctor::all()]);
+    }
 }
