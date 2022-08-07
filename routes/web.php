@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\DoctorController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,11 @@ Route::get('/', function () {
 Route::get('/faq', function () {
     return view('faq');
 });
+
+Route::get('/{doctor}/create-appointment', [AppointmentController::class,'CreateZoomMeeting']);
+
+
+
 Route::get('/doctors', [DoctorController::class, 'list']);
 Route::get('/{doctor}', [DoctorController::class,'showSingle']);
 
