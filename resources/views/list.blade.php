@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+	@livewireStyles
     <?php BaseCss(); ?>
 
     <style>
@@ -92,8 +92,9 @@
 		<div class="container margin_60_35">
 			<div class="row">
 				<div class="col-lg-7">
-
-					@foreach ($doctors as $doctor)
+					{{-- <livewire:doctorlisting /> --}}
+					@livewire('doctorlisting')
+					{{-- @foreach ($doctors as $doctor)
 					<div class="strip_list wow fadeIn">
 						<a href="#0" class="wish_bt"></a>
 						<figure>
@@ -110,12 +111,12 @@
 							<li><a href="detail-page.html">Book now</a></li>
 						</ul>
 					</div>
-					@endforeach
+					@endforeach --}}
 					<!-- /strip_list -->
 
 				
 					
-					<nav aria-label="" class="add_top_20">
+					{{-- <nav aria-label="" class="add_top_20">
 						<ul class="pagination pagination-sm">
 							<li class="page-item disabled">
 								<a class="page-link" href="#" tabindex="-1">Previous</a>
@@ -127,7 +128,7 @@
 								<a class="page-link" href="#">Next</a>
 							</li>
 						</ul>
-					</nav>
+					</nav> --}}
 					<!-- /pagination -->
 				</div>
 				<!-- /col -->
@@ -156,6 +157,6 @@
 	<script src="../js/markerclusterer.js"></script>
     <script src="../js/map_listing.js"></script>
     <script src="../js/infobox.js"></script>
-    
+    @livewireScripts
 </body>
 </html>

@@ -98,10 +98,10 @@
 							<div class="indent_title_in">
 								<i class="pe-7s-user"></i>
 								<h3>Professional statement</h3>
-								<p>Mussum ipsum cacilds, vidis litro abertis.</p>
+								<p>Hakkında</p>
 							</div>
 							<div class="wrapper_indent">
-								<p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Nullam mollis. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapi.</p>
+								<p>{{$doctor->about}}</p>
 								<h6>Specializations</h6>
 								<div class="row">
 									<div class="col-lg-6">
@@ -133,7 +133,7 @@
 								<p>Mussum ipsum cacilds, vidis litro abertis.</p>
 							</div>
 							<div class="wrapper_indent">
-								<p>Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Nullam mollis. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapi.</p>
+								<p>{{$doctor->education}}</p>
 								<h6>Curriculum</h6>
 								<ul class="list_edu">
 									<li><strong>New York Medical College</strong> - Doctor of Medicine</li>

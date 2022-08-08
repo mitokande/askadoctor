@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+require __DIR__.'/auth.php';
 
 Route::get('/', function () {
     return view('index');
@@ -25,7 +26,8 @@ Route::get('/faq', function () {
 
 Route::get('/{doctor}/create-appointment', [AppointmentController::class,'CreateZoomMeeting']);
 
-
+Route::get('/add-doctor',[DoctorController::class,'create'])->middleware('auth');
+Route::post('/add-doctor',[DoctorController::class,'store']);
 
 Route::get('/doctors', [DoctorController::class, 'list']);
 Route::get('/{doctor}', [DoctorController::class,'showSingle']);
@@ -34,4 +36,3 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';

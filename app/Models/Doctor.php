@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Doctor extends Model
 {
     use HasFactory;
+
+    public static function getUsername($first_and_last_name){
+        
+        $username = str_replace(" ","-",$first_and_last_name);
+        $username = mb_strtolower($username,'UTF-8');
+        $username = strtr($username, ['ü'=>'u','ö'=>'o','ı'=>'i','ş'=>'s','ğ'=>'g']);
+        return $username;
+    }
 }

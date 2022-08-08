@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('telephone');
             $table->string('email');
             $table->string('profile_picture');
+            $table->string('about');
+            $table->string('service');
             $table->string('city');
             $table->string('address');
             $table->string('state');
