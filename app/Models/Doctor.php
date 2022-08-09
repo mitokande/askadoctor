@@ -16,4 +16,12 @@ class Doctor extends Model
         $username = strtr($username, ['ü'=>'u','ö'=>'o','ı'=>'i','ş'=>'s','ğ'=>'g']);
         return $username;
     }
+
+    public function scopeSearch($query,$term){
+        $term = '%'.$term.'%';
+        $query->where(function($query) use($term){
+            $query->where('first_name','like',$term)
+            ->orWhere('last_name','like',$term);
+        });
+    }
 }
