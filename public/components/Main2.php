@@ -22,12 +22,12 @@
                         <form method="get" action="/doctors">
                             <div id="custom-search-input">
                                 <div class="input-group">
-                                    <input type="text" class=" search-query" placeholder="Ex. Name, Specialization ....">
+                                    <input type="text" class=" search-query" name="search" placeholder="Ex. Name, Specialization ....">
                                     <input type="submit" class="btn_search" value="Search">
                                 </div>
                                 <ul>
                                     <li>
-                                        <input type="radio" id="all" name="radio_search" value="all" checked>
+                                        <input type="radio" id="all" name="type" value="all" checked>
                                         <label for="all">All</label>
                                     </li>
                                     <li>

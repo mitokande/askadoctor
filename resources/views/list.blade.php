@@ -41,11 +41,14 @@
 					</div>
 					<div class="col-md-6">
 						<div class="search_bar_list">
-							<input type="text" class="form-control" placeholder="Ex. Specialist, Name, Doctor...">
-							<input type="submit" value="Search">
+				
+							<form method="get">
+								<input type="text" class="form-control" name="search"  placeholder="{{ app('request')->input('search') }}">
+							<input type="submit"  value="Search">
+							</form>
 						</div>
 					</div>
-				</div>
+				</div>  
 				<!-- /row -->
 			</div>
 			<!-- /container -->
