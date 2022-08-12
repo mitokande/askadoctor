@@ -11,13 +11,12 @@ class Doctorlisting extends Component
 {
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
-    public $search;
-    protected $listeners = ['search' => 'render'];
 
-    public function render(Request $request)
+    public $doctors;
+
+    public function render()
     {
-        return view('livewire.doctorlisting',[
-            'doctors' => Doctor::when($request->search)->search(trim($request->search))->paginate(5),
-        ]);
+        // $this->doctors = Doctor::where("first_name","like",'%'.$this->search.'%')->paginate(5);
+        return view('livewire.doctorlisting',['doctors'=>$this->doctors]);
     }
 }
