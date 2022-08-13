@@ -64,8 +64,9 @@
 				<div class="col-lg-7">
 					{{-- <livewire:doctorlisting /> --}}
                     {{-- {{ $doctors->onEachSide(1)->links() }} --}}
+					{{$doctors->links()}}
     @foreach ($doctors as $doctor)
-		<div wire:key="item-{{ $doctor->id }}" class="strip_list wow fadeIn">
+		<div wire:key="item-{{ $doctor->id }}" class="strip_list">
 			<a href="#0" class="wish_bt"></a>
 			<figure>
 				<a href="/{{$doctor->username}}"><img src="{{$doctor->profile_picture}}" alt=""></a>
@@ -82,6 +83,7 @@
 			</ul>
 		</div>
     @endforeach
+	{{$doctors->links()}}
 
     {{-- {{ $doctors->onEachSide(1)->links() }} --}}
 					

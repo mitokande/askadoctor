@@ -34,7 +34,7 @@
     
     ?>
     
-	@livewire('doctorlisting',['doctors'=>$doctors])
+	@livewire('doctorlisting')
 
     <?php Footer(); ?>
 
