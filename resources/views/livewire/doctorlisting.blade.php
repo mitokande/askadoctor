@@ -45,6 +45,7 @@
 						</div>
 					</li>
 					<li>
+						
 						<h6>Sort by</h6>
 						<select name="orderby" class="selectbox">
 						<option value="Closest">Closest</option>
@@ -53,7 +54,14 @@
 						<option value="Women">Women</option>
 						</select>
 					</li>
+					
 				</ul>
+				<select wire:model="spec" name="spec" class="selectbox">
+					<option selected disabled value="">Select a category</option>
+					@foreach ($specs as $item)
+						<option value="{{$item->specialization}}">{{$item->specialization}}</option>
+					@endforeach
+				</select>
 			</div>
 			<!-- /container -->
 		</div>
@@ -71,9 +79,9 @@
 			<figure>
 				<a href="/{{$doctor->username}}"><img src="{{$doctor->profile_picture}}" alt=""></a>
 			</figure>
-			<small>{{$doctor->specilization}}</small>
+			<small>{{$doctor->specialization}}</small>
 			<h3>{{$doctor->first_name.' '.$doctor->last_name}}</h3>
-			<p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cuodo....</p>
+			<p>{{$doctor->about}}....</p>
 			<span class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i> <small>(145)</small></span>
 			<a href="badges.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Badge Level" class="badge_list_1"><img src="../img/badges/badge_1.svg" width="15" height="15" alt=""></a>
 			<ul>

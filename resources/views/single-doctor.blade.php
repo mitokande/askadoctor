@@ -327,7 +327,8 @@
 				<!-- /col -->
 				<aside class="col-xl-4 col-lg-4" id="sidebar">
 					<div class="box_general_3 booking">
-						<form>
+						<form method="POST" action="{{$doctor->username}}/create-appointment">
+							@csrf
 							<div class="title">
 							<h3>Book a Visit</h3>
 							<small>Monday to Friday 09.00am-06.00pm</small>
@@ -335,12 +336,12 @@
 							<div class="row">
 								<div class="col-6">
 									<div class="form-group">
-										<input class="form-control" type="text" id="booking_date" data-lang="en" data-min-year="2020" data-max-year="2024" data-disabled-days="10/17/2017,11/18/2017">
+										<input class="form-control" name="year" type="text" id="booking_date" data-lang="en" data-min-year="2020" data-max-year="2024" data-disabled-days="10/17/2017,11/18/2017">
 									</div>
 								</div>
 								<div class="col-6">
 									<div class="form-group">
-										<input class="form-control" type="text" id="booking_time" value="9:00 am">
+										<input class="form-control" name="time" type="text" id="booking_time" value="9:00 am">
 									</div>
 								</div>
 							</div>
@@ -372,7 +373,7 @@
 								</li>
 							</ul>
 							<hr>
-							<a href="booking-page.html" class="btn_1 full-width">Book Now</a>
+							<input type="submit" class="btn_1 full-width" value="Book Now" >
 						</form>
 					</div>
 					<!-- /box_general -->

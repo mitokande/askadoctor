@@ -31,12 +31,12 @@
 								@csrf
 								<div class="box_form">
 									<div class="form-group">
-										<label>Name</label>
-										<input type="text" name="name" class="form-control" placeholder="Your name">
+										<label>First Name</label>
+										<input type="text" name="first_name" class="form-control" placeholder="Your name">
 									</div>
 									<div class="form-group">
 										<label>Last name</label>
-										<input type="text" class="form-control" placeholder="Your last name">
+										<input type="text" name="last_name" class="form-control" placeholder="Your last name">
 									</div>
 									<div class="form-group">
 										<label>Email</label>
@@ -49,6 +49,15 @@
 									<div class="form-group">
 										<label>Confirm password</label>
 										<input type="password" class="form-control" id="password2" name="password_confirmation" placeholder="Confirm password">
+									</div>
+									<div class="form-group">
+										<label>Subscription Type</label>
+										<select name="subscription" class="selectbox">
+											<option value="bronz">Bronz</option>
+											<option value="silver">Silver</option>
+											<option value="gold">Gold</option>
+
+										</select>
 									</div>
 									<div id="pass-info" class="clearfix"></div>
 									<div class="checkbox-holder text-left">

@@ -25,7 +25,7 @@ class DoctorController extends Controller
         $doctor->telephone = $request->telephone;
         $doctor->profile_picture = $request->profile_picture;
         $doctor->about = $request->about;
-        $doctor->service = $request->service;
+        $doctor->service = "";
         $doctor->city = $request->city;
         $doctor->address = $request->address;
         $doctor->state = $request->state;

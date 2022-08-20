@@ -233,13 +233,13 @@ require_once("imports/base-css.php");
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Name</label>
-						<input type="text" class="form-control" placeholder="Your name">
+						<input type="text" class="form-control" name="first_name" placeholder="Your First name">
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Last name</label>
-						<input type="text" class="form-control" placeholder="Your last name">
+						<input type="text" class="form-control" name="last_name" placeholder="Your last name">
 					</div>
 				</div>
 			</div>
@@ -248,13 +248,13 @@ require_once("imports/base-css.php");
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Telephone</label>
-						<input type="text" class="form-control" placeholder="Your telephone number">
+						<input type="text" class="form-control" name="telephone" placeholder="Your telephone number">
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Email</label>
-						<input type="email" class="form-control" placeholder="Your email">
+						<input type="email" class="form-control" name="email" placeholder="Your email">
 					</div>
 				</div>
 			</div>
@@ -264,8 +264,8 @@ require_once("imports/base-css.php");
 					<div class="form-group">
 						<label>Profile picture</label>
 						{{-- <form action="/file-upload" class="dropzone" ></form> --}}
-                        <div class="dropzone dz-clickable" id="myDropzone"><div class="dz-default dz-message"><button class="dz-button" type="button">Ürün görsellerini sürükleyin yada buraya tıklayın.</button></div></div>
-					</div>
+            <input type="text" class="form-control" name="profile_picture" id="">
+          </div>
 				</div>
 			</div>
 			<!-- /row-->
@@ -280,7 +280,7 @@ require_once("imports/base-css.php");
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>City</label>
-						<select class="form-control">
+						<select name="city"  class="form-control">
 							<option value="">Select city</option>
 							<option value="New York">New York</option>
 							<option value="Chicago">Chicago</option>
@@ -292,7 +292,7 @@ require_once("imports/base-css.php");
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Address</label>
-						<input type="text" class="form-control" placeholder="Your address">
+						<input name="address" type="text" class="form-control" placeholder="Your address">
 					</div>
 				</div>
 			</div>
@@ -301,13 +301,13 @@ require_once("imports/base-css.php");
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>State</label>
-						<input type="text" class="form-control" placeholder="Your state">
+						<input type="text" name="state" class="form-control" placeholder="Your state">
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Zip code</label>
-						<input type="text" class="form-control" placeholder="Your zip code">
+						<input type="text" name="zipcode" class="form-control" placeholder="Your zip code">
 					</div>
 				</div>
 			</div>
@@ -322,8 +322,14 @@ require_once("imports/base-css.php");
 			<div class="row">
 				<div class="col-md-12">
 					<div class="form-group">
-						<label>Professional statement</label>
-						<div class="editor"></div>
+						<label>Education</label>
+						<div class="editor">
+              <input type="text" name="education" class="form-control">
+            </div>
+            <label>About</label>
+						<div class="editor">
+              <input type="text" name="about" class="form-control">
+            </div>
 					</div>
 				</div>
 			</div>
@@ -332,7 +338,7 @@ require_once("imports/base-css.php");
 				<div class="col-md-12">
 					<div class="form-group">
 						<label>Specialization <a href="#0" data-toggle="tooltip" data-placement="top" title="Separated by commas"><i class="fa fa-fw fa-question-circle"></i></a></label>
-						<input type="text" class="form-control" placeholder="Ex: Piscologist, Pediatrician...">
+						<input type="text" name="specialization" class="form-control" placeholder="Ex: Piscologist, Pediatrician...">
 					</div>
 				</div>
 			</div>

@@ -6,25 +6,26 @@ use App\Models\Doctor;
 use Illuminate\Http\Request;
 use MacsiDigital\Zoom\Facades\Zoom;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class AppointmentController extends Controller
 {
     //
-    public function CreateZoomMeeting($doctor){
+    public function CreateZoomMeeting($doctor,Request $request){
+      // $d = new Carbon($request->year.' '.$request->time);
+      // echo $d;
+      // echo '<br>'.$request->year;
+      // return;
         $doc = Doctor::where('username',$doctor)->first();
-        
+        $username = Auth::user()->name;
         $zoom = Zoom::user()->first();
         $meeting = Zoom::meeting()->make([
-            'topic' => $doc->first_name.' '.$doc->last_name.' ile '.$doc->specialization.' Görüşmesi',
-            'type' => 8,
-            'start_time' => new Carbon('2022-08-08 02:00:00')
-        ]);
-         $meeting->recurrence()->make([
-            'type' => 2,
-            'repeat_interval' => 1,
-            'weekly_days' => '2',
-            'end_times' => 5
+            'topic' => $username. ' ve Doctor ' .$doc->first_name.' '.$doc->last_name.' ile '.$doc->specialization.' Görüşmesi',
+            'duration' => '30',
+            'start_time' => new Carbon($request->year.' '.$request->time)
+
           ]);
+         
         $meeting->settings()->make([
                 'join_before_host' => true,
                 'approval_type' => 1,
