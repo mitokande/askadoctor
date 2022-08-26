@@ -29,7 +29,7 @@ Route::post('/book',function(Request $request){
     $time = new Carbon($request->date.' '.$request->time);
     return $time;
 });
-Route::post('/{doctor}/create-appointment', [AppointmentController::class,'CreateZoomMeeting']);
+Route::post('/{doctor}/create-appointment', [AppointmentController::class,'CreateZoomMeeting'])->middleware('auth');
 
 Route::get('/add-doctor',[DoctorController::class,'create'])->middleware('auth');
 Route::post('/add-doctor',[DoctorController::class,'store']);

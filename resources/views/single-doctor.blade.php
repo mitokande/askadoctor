@@ -346,28 +346,44 @@
 								</div>
 							</div>
 							<!-- /row -->
+							<div class="row">
+								<div class="col-6">
+									<div class="form-group">
+										<input   value="Face to Face" type="radio" name="type" id="f2f">
+										<label for="f2f">Face to Face</label>
+
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="form-group">
+										<input  value="Online" type="radio" name="type" id="online">
+										<label for="online">Online</label>
+									</div>
+								</div>
+							</div>
+							<!-- row -->
 							<ul class="treatments clearfix">
 								<li>
 									<div class="checkbox">
-										<input type="checkbox" class="css-checkbox" id="visit1" name="visit1">
+										<input type="checkbox" class="css-checkbox" id="visit1" value="Back Pain visit" name="subject[]">
 										<label for="visit1" class="css-label">Back Pain visit <strong>$55</strong></label>
 									</div>
 								</li>
 								<li>
 									<div class="checkbox">
-										<input type="checkbox" class="css-checkbox" id="visit2" name="visit2">
+										<input type="checkbox" class="css-checkbox" id="visit2" value="Cardiovascular screen" name="subject[]">
 										<label for="visit2" class="css-label">Cardiovascular screen <strong>$55</strong></label>
 									</div>
 								</li>
 								<li>
 									<div class="checkbox">
-										<input type="checkbox" class="css-checkbox" id="visit3" name="visit3">
+										<input type="checkbox" class="css-checkbox" id="visit3" value="Diabetes consultation" name="subject[]">
 										<label for="visit3" class="css-label">Diabetes consultation <strong>$55</strong></label>
 									</div>
 								</li>
 								<li>
 									<div class="checkbox">
-										<input type="checkbox" class="css-checkbox" id="visit4" name="visit4">
+										<input type="checkbox" class="css-checkbox" id="visit4" value="General visit" name="subject[]">
 										<label for="visit4" class="css-label">General visit <strong>$55</strong></label>
 									</div>
 								</li>

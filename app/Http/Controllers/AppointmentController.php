@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use App\Models\Doctor;
 use Illuminate\Http\Request;
 use MacsiDigital\Zoom\Facades\Zoom;
@@ -34,8 +35,26 @@ class AppointmentController extends Controller
                 'waiting_room' => false,
               ]);
         $zoom->meetings()->save($meeting);
-        $meetings = $zoom->meetings()->all();
-        
-        return($meetings);
+        // $meetings = $zoom->meetings()->all();
+        // $meeting->start_url
+        $price = count($request->subject)*100;
+        $appointment = new Appointment();
+        $appointment->user_id = Auth::user()->id;
+        $appointment->doctor_id = $doc->id;
+        $appointment->meeting_id = $meeting->id;
+        $appointment->appointment_time = new Carbon($request->year.' '.$request->time);
+        $appointment->user_ip = $request->ip();
+        $appointment->appointment_type = $request->type;
+        $appointment->appointment_subject = json_encode($request->subject);
+        $appointment->appointment_note =  $request->note;
+        $appointment->appointment_status =  "Booked";
+        $appointment->appointment_link =  $meeting->start_url;
+        $appointment->appointment_password =  $meeting->password;
+        $appointment->appointment_price = $price;
+        $appointment->appointment_paid_price = 0;
+        $appointment->save();
+
+
+        return redirect($doc->username);
     }
 }

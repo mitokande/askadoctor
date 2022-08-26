@@ -15,6 +15,19 @@ return new class extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
+            $table->integer('doctor_id');
+            $table->string('meeting_id')->nullable();
+            $table->timestamp('appointment_time');
+            $table->string('appointment_type');
+            $table->string('appointment_subject');
+            $table->string('appointment_note')->nullable();
+            $table->string('appointment_status');
+            $table->text('appointment_link')->nullable();
+            $table->string('appointment_password')->nullable();
+            $table->string('appointment_price')->nullable();
+            $table->string('appointment_paid_price');
+            $table->string('user_ip');
             $table->timestamps();
         });
     }
