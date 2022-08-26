@@ -57,4 +57,11 @@ class AppointmentController extends Controller
 
         return redirect($doc->username);
     }
+
+
+    public function listBookings(){
+      return view('dashboard.bookings',[
+        'appointments' => Appointment::all()->where('user_id',Auth::user()->id)
+    ]);
+    }
 }

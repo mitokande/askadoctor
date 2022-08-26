@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Doctor extends Model
 {
     use HasFactory;
-
+    public function getFullName(){
+        return $this->first_name.' '.$this->last_name;
+    }
     public static function getUsername($first_and_last_name){
         
         $username = str_replace(" ","-",$first_and_last_name);

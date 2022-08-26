@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\DoctorController;
+use App\Models\Appointment;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,8 +39,12 @@ Route::post('/add-doctor',[DoctorController::class,'store']);
 Route::get('/doctors', [DoctorController::class, 'list']);
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboard.dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/dashboard/bookings', [AppointmentController::class,'listBookings'])->middleware(['auth'])->name('bookings_panel');
+
+
 Route::get('/{doctor}', [DoctorController::class,'showSingle']);
 
 Route::get('/email/verify', function () {
